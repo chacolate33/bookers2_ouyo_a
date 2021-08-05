@@ -4,6 +4,7 @@
 
     <h1>User info</h1>
     
+    <div class="error">
     <% if @user.errors.any? %>
      <% if @user.errors.count == 2 %>
      2 errors prohibited this obj from being saved:<br>
@@ -14,6 +15,7 @@
      <%= message %><br>
      <% end %>
     <% end %>
+    </div>
 
     <%= form_with model: @user, local:true do |f| %>
       <div class="mb-3 form-group">
