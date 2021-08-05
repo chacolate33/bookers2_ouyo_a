@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'users' => "users#index", as: 'users'
 
   get 'about' => "homes#about", as: 'about'
+  
+  put 'books/:id' => "books#create", as: 'book'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :books, only: [:new, :create, :index, :show, :destroy, :update, :edit]

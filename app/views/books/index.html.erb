@@ -1,3 +1,14 @@
+<% if @book.errors.any? %>
+ <% if @book.errors.count == 2 %>
+   2 errors prohibited this obj from being saved:<br>
+   <% else %>
+   1 error prohibited this obj from being saved:<br>
+ <% end %>
+ <% @book.errors.full_messages.each do |message| %>
+  <%= message %><br>
+ <% end %>
+<% end %>
+
 <div class="container">
 
  <div class="row">
@@ -34,7 +45,3 @@
   </div>
  </div>
 </div>
-
-
-
-
