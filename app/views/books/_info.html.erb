@@ -16,17 +16,15 @@
    </table>
 
     <% if user.id == current_user.id %>
-    <div class="row">
-     <%= link_to edit_user_path(user) do %>
-     <button class="btn btn-outline-secondary btn-block"><i class="fas fa-user"></i></button>
-     <% end %>
+    <div class="row mt-5">
+     <div class="btn btn-outline-secondary btn-block" style="width: 100%; padding: 0;"><%= link_to edit_user_path(user), style: 'width: 100%;' do %><i class="fas fa-user" style="width: 100%;"></i><% end %></div>
+
     </div>
 
     <% else %>
-    <div class="row">
-     <%= link_to user_path(current_user) do %>
-     <button class="btn btn-outline-secondary btn-block"><i class="fas fa-user"></i></button>
-     <% end %>
+    <div class="row mt-5">
+     <div class="btn btn-outline-secondary btn-block" style="width: 100%; padding: 0;"><%= link_to user_path(current_user), style: 'width: 100%;' do %><i class="fas fa-user" style="width: 100%;"></i><% end %></div>
+
     </div>
     <% end %>
 

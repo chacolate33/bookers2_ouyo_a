@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'users' => "users#index", as: 'users'
 
-  get 'about' => "homes#about", as: 'about'
+  get 'home/about' => "homes#about", as: 'about'
   
   put 'books/:id' => "books#create", as: 'book'
 
