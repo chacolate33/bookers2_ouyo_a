@@ -4,7 +4,6 @@ class DeviseCreateBooks < ActiveRecord::Migration[5.2]
       t.text :title
       t.text :body
       t.string :book_id
-
     end
   end
 end

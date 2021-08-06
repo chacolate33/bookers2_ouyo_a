@@ -9,28 +9,28 @@
     <tbody>
      <tr>
       <td>
-       <%= link_to user_path(@book.user.id) do %>
-        <%= attachment_image_tag @book.user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %>
+       <%= link_to user_path(@show_book.user.id) do %>
+        <%= attachment_image_tag @show_book.user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %>
         <br>
-        <%= @book.user.name %>
+        <%= @show_book.user.name %>
        <% end %>
       </td>
       <td>
-       <%= link_to @book.title, book_path(@book.id) %>
+       <%= link_to @show_book.title, book_path(@show_book.id) %>
        </td>
       <td>
-        <%= @book.body %>
+        <%= @show_book.body %>
       </td>
       
-      <% if @book.user.id == current_user.id %>
+      <% if @show_book.user.id == current_user.id %>
       <td>
-        <%= link_to edit_book_path(@book.id) do %>
+        <%= link_to edit_book_path(@show_book.id) do %>
         <span class="btn btn-sm btn-success">Edit</span>
         <% end %>
       </td>
 
       <td>
-        <%= link_to book_path(@book.id) ,method: :delete, "data-confirm" => "本当に消しますか？" do %>
+        <%= link_to book_path(@show_book.id) ,method: :delete, "data-confirm" => "本当に消しますか？" do %>
         <span class="btn btn-sm btn-danger">Destroy</span>
         <% end %>
       </td>
