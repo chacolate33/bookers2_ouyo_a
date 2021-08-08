@@ -1,4 +1,4 @@
-class DeviseCreateBooks < ActiveRecord::Migration[5.2]
+class CreateBooks < ActiveRecord::Migration[5.2]
   def change
     create_table :books do |t|
       t.text :title
