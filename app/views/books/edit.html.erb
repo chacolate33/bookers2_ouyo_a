@@ -2,18 +2,6 @@
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <h1>Editing Book</h1>
-      <div class="error">
-    <% if @book.errors.any? %>
-     <% if @book.errors.count == 2 %>
-       2 errors prohibited this obj from being saved:<br>
-     <% else %>
-       1 error prohibited this obj from being saved:<br>
-     <% end %>
-     <% @book.errors.full_messages.each do |message| %>
-    　 <%= message %><br>
-     <% end %>
-    <% end %>
-      </div>
 
       <%= form_with model: @book, local:true do |f| %>
 
