@@ -33,6 +33,10 @@
       <td>
         <%= render 'favorites/favorites', book: @book %>
       </td>
+      
+      <td>
+       コメント数: <%= @book.book_comments.count %>
+      </td>
 
       <% if @book.user.id == current_user.id %>
       <td>
@@ -48,9 +52,6 @@
       </td>
       <% end %>
 
-      <td>
-       <p>コメント数: <%= @book.book_comments.count %></p>
-      </td>
      </tr>
     </tbody>
    </table>
