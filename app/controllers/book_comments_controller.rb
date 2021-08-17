@@ -9,7 +9,7 @@ class BookCommentsController < ApplicationController
     else
     @user = User.find(book.user_id)
     @show_book = book
-    @book = Book.new
+    @book = Book.find(params[:book_id])
     render 'books/show'
     end
   end
