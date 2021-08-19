@@ -3,18 +3,35 @@
     <tbody>
      <tr></tr>
      <tr>
-      <th>name</th>
-      <th><%= user.name %></th>
+      <td>name</td>
+      <td><%= user.name %></td>
      </tr>
      <tr>
-      <th>introduction</th>
-      <th><%= user.introduction %></th>
+      <td>introduction</td>
+      <td><%= user.introduction %></td>
+     </tr>
+     <tr>
+      <td>follows</td>
+      <td><%= user.followings.count %></td>
+     </tr>
+     <tr>
+      <td>followers</td>
+      <td><%= user.followers.count %></td>
      </tr>
     </tbody>
    </table>
 
-
+    <% if user == current_user %>
     <div class="row">
      <div class="btn btn-outline-secondary btn-block" style="width: 100%; padding: 0;"><%= link_to edit_user_path(user.id), style: 'width: 100%;' do %><i class="fas fa-user-cog" style="width: 100%;"></i><% end %></div>
     </div>
+    <% else %>
+    <div class="row">
+     <% if current_user.following?(user) %>
+      <%= link_to user_relationships_path(user.id), method: :delete do %><span class="btn btn-success">フォロー外す</span><% end %>
+      <% else %>
+      <%= link_to user_relationships_path(user.id), method: :post do %><span class="btn btn-success">フォローする</span><% end %>
+     <% end %>  
+    </div>
+    <% end %>
     
