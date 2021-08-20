@@ -28,6 +28,18 @@ class User < ApplicationRecord
   
   attachment :profile_image
   
+  def self.looks(searches, word)
+    if searches == "forward_match"
+      @users = User.where("text LIKE?", "#{word}%")
+    elsif searches == "backward_match"
+      @users = User.where("text LIKE?", "#{word}%")
+    elsif searches == "perfect_match"
+      @users = User.where("#{word}")
+    else searches == "partical_match"
+      @users = User.where("text LIKE?", "%#{word}%")
+    end
+  end
+
   validates :name, uniqueness: true, length: { minimum: 2, maximum: 20}
   validates :introduction, length: {maximum: 50}
 end

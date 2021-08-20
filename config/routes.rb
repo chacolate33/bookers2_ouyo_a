@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'searches/search'
   root 'homes#top'
   devise_for :users
   get 'users' => "users#index", as: 'users'
@@ -21,5 +22,7 @@ Rails.application.routes.draw do
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
   end
+  
+  get 'search' => "searches#search"
   
 end
