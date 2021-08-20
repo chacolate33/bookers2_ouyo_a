@@ -1,4 +1,4 @@
-<% if @users.count == 0 %>
+<% if users.count == 0 %>
   ユーザーはいません。
 <% else %>
   <table class="table">
@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @users.each do |user| %>
+      <% users.each do |user| %>
       <tr>
         <td>
           <%= attachment_image_tag user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %>
