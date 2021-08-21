@@ -1,2 +1,10 @@
-<h1>Searches#search</h1>
-<p>Find me in app/views/searches/search.html.erb</p>
+
+  
+<% if @range == "User" %>
+  <h2>Users search for "<%= params[:word] %>"</h2>
+  <%= render 'users/index', users: @users %>
+    
+<% else %>
+  <h2>Books search for "<%= params[:word] %>"</h2>
+  <%= render 'books/index', books: @books %>
+<% end %>
