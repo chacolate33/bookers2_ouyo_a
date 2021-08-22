@@ -30,13 +30,13 @@ class User < ApplicationRecord
   
   def self.looks(searches, word)
     if searches == "forward_match"
-      @users = User.where("text LIKE?", "#{word}%")
+      @users = User.where("name LIKE?", "#{word}%")
     elsif searches == "backward_match"
-      @users = User.where("text LIKE?", "#{word}%")
+      @users = User.where("name LIKE?", "#{word}%")
     elsif searches == "perfect_match"
-      @users = User.where("#{word}")
+      @users = User.where("name LIKE?", "#{word}%")
     else searches == "partical_match"
-      @users = User.where("text LIKE?", "%#{word}%")
+      @users = User.where("name LIKE?", "%#{word}%")
     end
   end
 
