@@ -2,9 +2,9 @@
   
 <% if @range == "User" %>
   <h2>Users search for "<%= params[:word] %>"</h2>
-  <%= render 'users/index', users: @users %>
+  <%= render 'searches/userindex', users: @users %>
     
 <% else %>
   <h2>Books search for "<%= params[:word] %>"</h2>
-  <%= render 'books/index', books: @books %>
+  <%= render 'searches/bookindex', books: @books %>
 <% end %>

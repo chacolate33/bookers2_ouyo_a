@@ -41,8 +41,8 @@
         </div>
       </div>
     </nav>
-    
-    <div class="text-center">
+
+    <div class="text-center mt-2">
     <% if user_signed_in? %>
       <%= form_with url: search_path, method: :get, local: :true do |f| %>
         <%= f.text_field :word %>
