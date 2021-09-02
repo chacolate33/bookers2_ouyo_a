@@ -7,7 +7,6 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all.reverse_order
-    @user = User.find(current_user.id)
     @book = Book.new
   end
 
